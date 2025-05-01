@@ -6,11 +6,11 @@ using System.Reflection;
 [HarmonyPatch]
 public class PlayerIntrinsicsPatch
 {
-    private static bool intrinsicsAdded;
-
     [HarmonyPatch(typeof(PlayerIntrinsics), "AddInstrinsics")]
     class AddInstrinsicsPatch
     {
+        private static bool intrinsicsAdded;
+
         static void Postfix()
         {
             if (intrinsicsAdded == true)
